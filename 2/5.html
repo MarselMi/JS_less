@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  "use strict";
+
+  let a = Number(prompt('Введите первое число: '))
+  let b = Number(prompt('Введите второе число: '))
+  let operation = prompt('Введите одну из операций "+", "-", "/", "*" : ')
+  /**
+   Функция суммирует 2 числа
+   */
+  function sum(a, b) {
+    console.log(a + b);
+  };
+  /**
+  Функция производит деления первого числа на второе
+   */
+  function divi (a, b) {
+    console.log(a / b);
+  };
+  /**
+   Функция умножает цифры
+   */
+  function mul (a, b) {
+    console.log(a * b);
+  };
+  /**
+  Функция отнимает от большего числа меньшее, если они равны возвращает 0
+  */
+  function differ (a, b) {
+    if (a > b) {
+      console.log(a - b);
+    } else if (a < b) {
+      console.log(b - a);
+    } else {
+      console.log(0)
+    };
+  };
+
+  function mathOperation(a, b, operation) {
+    if (operation == '+') {
+      sum(a, b);
+    } else if (operation == '-') {
+      differ(a, b);
+    } else if (operation == '/') {
+      divi(a, b);
+    } else if (operation == '*') {
+      mul(a, b);
+    } else {
+      console.log(NaN)
+    };
+  };
+
+  mathOperation(a, b, operation);
+
+</script>
+</body>
+</html>
